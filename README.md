@@ -6,7 +6,8 @@ The world and models in this repository are mantained by the [Dynamic Interactio
 # Usage 
 - `git clone` the repository on your computer.
 - Add `icub-gazebo-wholebody/models` to the `GAZEBO_MODEL_PATH` enviromental variable. 
-  For more info see the [`icub-gazebo`](https://github.com/robotology/icub-gazebo) repository. 
+
+For more info see the [`icub-gazebo`](https://github.com/robotology/icub-gazebo) repository. 
 
 # Mantainer 
 [Gabriele Nava](https://www.iit.it/it/people/gabriele-nava) ( [@gabrielenava](https://github.com/gabrielenava) ).
