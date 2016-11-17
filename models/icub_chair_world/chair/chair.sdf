@@ -1,0 +1,116 @@
+<!-- A simple fixed chair with FT sensor -->
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="chair">
+    <link name="low_part">
+      <pose>0 0 0.18 0 0 0</pose>
+      <inertial>
+        <mass>1</mass>
+      </inertial>
+      <collision name="collision_low">
+ 	<pose>0 0 0.0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.05 0.75 0.025</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual_low">
+ 	<pose>0 0 0.0 0 0 0</pose>
+         <geometry>
+           <box>
+            <size>0.05 0.75 0.025</size>
+	   </box>
+         </geometry>
+      </visual>
+    </link>
+    <link name="high_part">
+      <pose>0 0 0.205 0 0 0</pose>
+      <inertial>
+        <mass>1</mass>
+      </inertial>
+      <collision name='collision_high'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.05 0.75 0.025</size>
+          </box>
+        </geometry>
+        <max_contacts>4</max_contacts>
+        <surface>
+          <contact>
+            <ode>
+              <soft_erp>0.2</soft_erp>
+              <soft_cfm>0</soft_cfm>
+              <kp>1800000</kp>
+              <kd>100</kd>
+              <max_vel>100</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+              <fdir1>0 0 0</fdir1>
+              <slip1>0</slip1>
+              <slip2>0</slip2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0</restitution_coefficient>
+            <threshold>100000</threshold>
+          </bounce>
+        </surface>
+      </collision>
+      <visual name="visual_high">
+ 	<pose>0 0 0.0 0 0 0</pose>
+	 <material>
+          <script>
+            <name>Gazebo/Blue</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+         <geometry>
+           <box>
+            <size>0.05 0.75 0.025</size>
+	   </box>
+         </geometry>
+      </visual>
+    </link>
+    <joint name="sensor_joint" type="fixed">
+      	<parent>low_part</parent>
+      	<child>high_part</child>
+       	<axis>
+         <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+         </limit>
+         <xyz>0 0 0</xyz>
+        </axis>
+      <sensor name='chair_ft_sensor' type='force_torque'>
+         <force_torque>
+          <frame>child</frame>
+          <measure_direction>parent_to_child</measure_direction>
+         </force_torque>
+        <always_on>1</always_on>
+        <visualize>1</visualize>
+        <update_rate>100</update_rate>
+       <plugin name='chair_FT_plugin' filename='libgazebo_yarp_forcetorque.so'>
+          <yarpConfigurationFile>model://icub_chair_world/chair/chair_gazebo_torque.ini</yarpConfigurationFile>
+       </plugin>
+      </sensor>
+    </joint>
+    <joint name="fixed to ground" type="fixed">
+      	<parent>world</parent>
+      	<child>low_part</child>
+       	<axis>
+         <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+         </limit>
+         <xyz>0 0 0.18</xyz>
+        </axis>
+    </joint>
+  </model>
+</sdf>
