@@ -1,6 +1,6 @@
 <?xml version='1.0'?>
 <sdf version='1.6'>
-  <model name='unit_sphere'>
+  <model name='blue_ball'>
     <link name='link'>
       <pose frame=''>0 0 0.04 0 0 0</pose>
       <inertial>
