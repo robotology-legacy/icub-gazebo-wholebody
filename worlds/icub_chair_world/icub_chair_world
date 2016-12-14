@@ -78,12 +78,12 @@
     </spherical_coordinates>
     <model name='chair'>
      <include>
-      <uri>model://icub_chair_world/chair</uri>
+      <uri>model://chair</uri>
      </include>
     </model>
     <model name='iCub'>
      <include>
-      <uri>model://icub_chair_world/icub_chair</uri>
+      <uri>model://icub_chair</uri>
       <pose> 0 0 0 0 0 0 </pose>
      </include>
     </model>  
