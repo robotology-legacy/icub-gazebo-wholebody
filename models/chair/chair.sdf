@@ -97,7 +97,7 @@
         <visualize>1</visualize>
         <update_rate>100</update_rate>
        <plugin name='chair_FT_plugin' filename='libgazebo_yarp_forcetorque.so'>
-          <yarpConfigurationFile>model://icub_chair_world/chair/chair_gazebo_torque.ini</yarpConfigurationFile>
+          <yarpConfigurationFile>model://chair/chair_gazebo_torque.ini</yarpConfigurationFile>
        </plugin>
       </sensor>
     </joint>
