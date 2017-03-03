@@ -1,7 +1,7 @@
 <?xml version='1.0'?>
 <sdf version='1.5'>
   <model name='iCub'>
-    <pose>0 0 0.6 0 0 3.14</pose>
+    <pose>-0.077649 0.000965 0.389694 -8e-06 0.036487 3.14094</pose>
     <link name='root_link'>
       <pose>0 0 0 0 -0 0</pose>
       <inertial>
