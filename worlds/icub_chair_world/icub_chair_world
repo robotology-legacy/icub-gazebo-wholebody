@@ -12,15 +12,14 @@
       <uri>model://ground_plane</uri>
     </include>
 
-    <!-- iCub in the sitting position -->
-    <include>
-        <uri>model://icub_chair</uri>
-    </include>
-
     <!-- Chair for sittin' on -->
     <include>
         <uri>model://chair</uri>
     </include>
 
+    <!-- iCub in the sitting position -->
+    <include>
+    <uri>model://icub_chair</uri>
+    </include>
   </world>
 </sdf>
