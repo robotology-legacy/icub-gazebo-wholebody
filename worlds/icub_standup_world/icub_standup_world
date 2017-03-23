@@ -19,7 +19,7 @@
 
     <!-- iCub in the sitting position -->
     <include>
-    <uri>model://icub_chair</uri>
+    <uri>model://icub_standup</uri>
     </include>
   </world>
 </sdf>
