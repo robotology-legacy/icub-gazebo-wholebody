@@ -2207,18 +2207,18 @@
     </joint>
     <plugin name='controlboard_torso' filename='libgazebo_yarp_controlboard.so'>
       <yarpConfigurationFile>model://icub/conf/gazebo_icub_torso.ini</yarpConfigurationFile>
-      <initialConfiguration>0.0 0.0 -0.08</initialConfiguration>
+      <initialConfiguration>0.0 0.0 0.0</initialConfiguration>
     </plugin>
     <plugin name='controlboard_head' filename='libgazebo_yarp_controlboard.so'>
       <yarpConfigurationFile>model://icub/conf/gazebo_icub_head.ini</yarpConfigurationFile>
     </plugin>
     <plugin name='controlboard_left_arm_no_arm' filename='libgazebo_yarp_controlboard.so'>
       <yarpConfigurationFile>model://icub/conf/gazebo_icub_left_arm_no_hand_for_no_hand_model.ini</yarpConfigurationFile>
-      <initialConfiguration>-1.575 0.2094 1.3963 0.2618 0 0 0</initialConfiguration>
+      <initialConfiguration>-0.6981 0.2094 1.3963 0.5585 0 0 0</initialConfiguration>
     </plugin>
     <plugin name='controlboard_right_arm_no_arm' filename='libgazebo_yarp_controlboard.so'>
       <yarpConfigurationFile>model://icub/conf/gazebo_icub_right_arm_no_hand_for_no_hand_model.ini</yarpConfigurationFile>
-      <initialConfiguration>-1.575 0.2094 1.3963 0.2618 0 0 0</initialConfiguration>
+      <initialConfiguration>-0.6981 0.2094 1.3963 0.5585 0 0 0</initialConfiguration>
     </plugin>
     <plugin name='controlboard_left_leg' filename='libgazebo_yarp_controlboard.so'>
       <yarpConfigurationFile>model://icub/conf/gazebo_icub_left_leg.ini</yarpConfigurationFile>

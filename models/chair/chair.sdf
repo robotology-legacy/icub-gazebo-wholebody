@@ -1,9 +1,9 @@
-<!-- A simple fixed chair with FT sensor -->
+<!-- A simple fixed chair with FT sensor inside -->
 <?xml version="1.0" ?>
 <sdf version="1.5">
   <model name="chair">
     <link name="low_part">
-      <pose>0 0 0.18 0 0 0</pose>
+      <pose>0 0 0.17 0 0 0</pose>
       <inertial>
         <mass>1</mass>
       </inertial>
@@ -25,7 +25,7 @@
       </visual>
     </link>
     <link name="high_part">
-      <pose>0 0 0.205 0 0 0</pose>
+      <pose>0 0 0.195 0 0 0</pose>
       <inertial>
         <mass>1</mass>
       </inertial>
@@ -109,7 +109,7 @@
           <lower>0</lower>
           <upper>0</upper>
          </limit>
-         <xyz>0 0 0.18</xyz>
+         <xyz>0 0 0.17</xyz>
         </axis>
     </joint>
   </model>
