@@ -1679,7 +1679,7 @@
   <!--     <visual name='eyes_tilt_visual'>
         <pose>0.0 0.0 0.0 0 0 0</pose>
         <geometry>
-          <cylinder><radius>0.01</radius><length>0.05</length></cylinder> 
+          <cylinder><radius>0.01</radius><length>0.05</length></cylinder>
         </geometry>
       </visual> -->
     </link>
@@ -1699,12 +1699,12 @@
         </inertia>
       </inertial>
        <visual name='left_eye_visual'>
-         <pose>0.055 0.033 -0.14 0 0 0</pose> 
+         <pose>0.055 0.033 -0.14 0 0 0</pose>
         <geometry>
              <mesh>
             <scale>1 1 1</scale>
             <uri>model://icub/meshes/visual/icub_eye.dae</uri>
-          </mesh> 
+          </mesh>
    <!-- <cylinder><radius>0.01</radius><length>0.05</length></cylinder> -->
         </geometry>
       </visual>
@@ -1725,13 +1725,13 @@
         </inertia>
       </inertial>
       <visual name='right_eye_visual'>
-        <pose>0.055 0.033 -0.14 0 0 0</pose> 
+        <pose>0.055 0.033 -0.14 0 0 0</pose>
         <geometry>
  <!-- <cylinder><radius>0.01</radius><length>0.05</length></cylinder>-->
             <mesh>
             <scale>1 1 1</scale>
             <uri>model://icub/meshes/visual/icub_eye.dae</uri>
-          </mesh> 
+          </mesh>
         </geometry>
       </visual>
     </link>
@@ -2205,20 +2205,24 @@
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
     </joint>
+    <!-- <plugin name='apply_wrist_force' filename='libapply_wrist_force.so'/> -->
     <plugin name='controlboard_torso' filename='libgazebo_yarp_controlboard.so'>
       <yarpConfigurationFile>model://icub/conf/gazebo_icub_torso.ini</yarpConfigurationFile>
-      <initialConfiguration>0.0 0.0 0.0</initialConfiguration>
+      <!-- <initialConfiguration>0.0 0.0 0.0</initialConfiguration> -->
+      <initialConfiguration>0.0 0.0 0.42401</initialConfiguration>
     </plugin>
     <plugin name='controlboard_head' filename='libgazebo_yarp_controlboard.so'>
       <yarpConfigurationFile>model://icub/conf/gazebo_icub_head.ini</yarpConfigurationFile>
     </plugin>
     <plugin name='controlboard_left_arm_no_arm' filename='libgazebo_yarp_controlboard.so'>
       <yarpConfigurationFile>model://icub/conf/gazebo_icub_left_arm_no_hand_for_no_hand_model.ini</yarpConfigurationFile>
-      <initialConfiguration>-0.6981 0.2094 1.3963 0.5585 0 0 0</initialConfiguration>
+      <initialConfiguration>-1.62537 0.43633 0.39088 0.5585 0 0 0</initialConfiguration>
+      <!-- <initialConfiguration>-0.6981 0.2094 1.3963 0.5585 0 0 0</initialConfiguration> -->
     </plugin>
     <plugin name='controlboard_right_arm_no_arm' filename='libgazebo_yarp_controlboard.so'>
       <yarpConfigurationFile>model://icub/conf/gazebo_icub_right_arm_no_hand_for_no_hand_model.ini</yarpConfigurationFile>
-      <initialConfiguration>-0.6981 0.2094 1.3963 0.5585 0 0 0</initialConfiguration>
+      <initialConfiguration>-1.62537 0.43633 0.39088 0.5585 0 0 0</initialConfiguration>
+      <!-- <initialConfiguration>-0.6981 0.2094 1.3963 0.5585 0 0 0</initialConfiguration> -->
     </plugin>
     <plugin name='controlboard_left_leg' filename='libgazebo_yarp_controlboard.so'>
       <yarpConfigurationFile>model://icub/conf/gazebo_icub_left_leg.ini</yarpConfigurationFile>
