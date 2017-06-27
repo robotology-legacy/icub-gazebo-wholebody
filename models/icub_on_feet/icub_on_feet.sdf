@@ -1,0 +1,9 @@
+<?xml version='1.0'?>
+<sdf version='1.5'>
+  <model name="iCub_on_feet">
+    <include>
+      <uri>model://iCubGenova04</uri>
+      <pose>0.0 0 0.64 0 0 3.14</pose>
+    </include>
+  </model>
+</sdf>

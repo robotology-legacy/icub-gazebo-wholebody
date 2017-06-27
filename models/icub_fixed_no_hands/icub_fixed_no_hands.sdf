@@ -1,14 +1,14 @@
 <?xml version='1.0'?>
-<sdf version='1.4'>
+<sdf version='1.5'>
   <model name="iCub_fixed_no_hands">
     <include>
-      <uri>model://icub</uri>
+      <uri>model://iCubGenova04</uri>
       <pose>0.0 0 1.0 0 0 3.14</pose>
     </include>
 
     <joint name="fixed to ground" type="revolute">
       <parent>world</parent>
-      <child>iCub::root_link</child>
+      <child>iCub::base_link</child>
        <axis>
         <limit>
           <lower>0</lower>
