@@ -38,7 +38,7 @@
              <ode>
                <soft_erp>0.2</soft_erp>
                <soft_cfm>0</soft_cfm>
-               <kp>1800000</kp>
+               <kp>18000000</kp>
                <kd>100</kd>
                <max_vel>100</max_vel>
                <min_depth>0.0001</min_depth>
