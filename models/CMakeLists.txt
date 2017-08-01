@@ -23,7 +23,8 @@ set(ROBOT_NAME "" CACHE STRING "Select the the robot name that will match YARP_R
 
 # Check if YARP_ROBOT_NAME is defined as env variable
 if(ROBOT_NAME STREQUAL "")
-  message(FATAL_ERROR "ROBOT_NAME option is not defined. Pass it to CMake with -D")
+  message(WARNING "ROBOT_NAME option is not defined. Using icub as default for backwards compatibility")
+  set(ROBOT_NAME "icub")
 endif()
 
 # Setup the build tree
