@@ -18,14 +18,8 @@ macro(CONFIGURE_FILES srcDir destDir)
 
 endmacro(CONFIGURE_FILES)
 
-# Allow specifying the robot name
-set(ROBOT_NAME "" CACHE STRING "Select the the robot name that will match YARP_ROBOT_NAME")
-
-# Check if YARP_ROBOT_NAME is defined as env variable
-if(ROBOT_NAME STREQUAL "")
-  message(WARNING "ROBOT_NAME option is not defined. Using icub as default for backwards compatibility")
-  set(ROBOT_NAME "icub")
-endif()
+# Allow specifying the robot name (default to "icub" for backwards compatibility)
+set(ROBOT_NAME "icub" CACHE STRING "Select the the robot name that will also match the sdf's model://{ROBOT_NAME} (model folder searched by Gazebo)")
 
 # Setup the build tree
 CONFIGURE_FILES(${CMAKE_SOURCE_DIR}/models ${CMAKE_BINARY_DIR}/gazebo/)
