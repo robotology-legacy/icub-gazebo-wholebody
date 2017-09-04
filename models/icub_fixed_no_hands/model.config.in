@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<model>
+    <name>@ROBOT_NAME@ fixed (no hands)</name>
+
+    <version>1.1</version>
+    <sdf version='1.5'>icub_fixed_no_hands.sdf</sdf>
+
+    <author>
+        <name>Silvio Traversaro</name>
+        <email>silvio.traversaro@iit.it</email>
+    </author>
+
+    <description>
+        Model for the iCub humanoid robot. For more information check icub.org.
+    </description>
+</model>
