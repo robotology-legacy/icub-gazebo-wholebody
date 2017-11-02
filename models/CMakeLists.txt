@@ -9,8 +9,9 @@ macro(CONFIGURE_FILES srcDir destDir)
     message(${srcTemplatePath})
 
     if(NOT IS_DIRECTORY ${srcTemplatePath})
+      string(REGEX REPLACE "\\.in$" "" destFile ${templateFile})
       configure_file(${srcTemplatePath}
-                     ${destDir}/${templateFile}
+                     ${destDir}/${destFile}
                      @ONLY)
     endif()
 
@@ -22,4 +23,4 @@ endmacro(CONFIGURE_FILES)
 set(ROBOT_NAME "icub" CACHE STRING "Select the the robot name that will also match the sdf's model://{ROBOT_NAME} (model folder searched by Gazebo)")
 
 # Setup the build tree
-CONFIGURE_FILES(${CMAKE_SOURCE_DIR}/models ${CMAKE_BINARY_DIR}/gazebo/)
+CONFIGURE_FILES(${CMAKE_SOURCE_DIR}/models ${CMAKE_BINARY_DIR}/gazebo/models)
