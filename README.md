@@ -16,7 +16,7 @@ cd build
 cmake -DROBOT_NAME=iCubGenova04 ..
 ```
 
-After this, append `<icub-gazebo-wholebody>/build/gazebo/models` to the `GAZEBO_MODEL_PATH` enviromental variable.
+After this, append `<icub-gazebo-wholebody>/build/gazebo` to the `GAZEBO_MODEL_PATH` enviromental variable.
 
 ## From the install tree
 
