@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <model>
-    <name>@ROBOT_NAME@ fixed (no hands)</name>
+    <name>@ROBOT_NAME@ fixed</name>
 
     <version>1.1</version>
-    <sdf version='1.5'>icub_fixed_no_hands.sdf</sdf>
+    <sdf version='1.5'>icub_fixed.sdf</sdf>
 
     <author>
         <name>Silvio Traversaro</name>
