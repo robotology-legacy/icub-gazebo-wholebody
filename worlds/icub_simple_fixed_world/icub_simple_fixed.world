@@ -20,7 +20,7 @@
 
     <!-- iCub -->
     <include>
-        <uri>model://icub_fixed_no_hands</uri>
+        <uri>model://icub_fixed</uri>
     </include>
    
   </world>
