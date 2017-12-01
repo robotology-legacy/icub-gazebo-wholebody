@@ -1,14 +1,14 @@
 <?xml version='1.0'?>
-<sdf version='1.4'>
-  <model name="iCub">
+<sdf version='1.5'>
+  <model name="iCub_feet_fixed">
     <include>
-      <uri>model://icub</uri>
-      <pose>0.0 0 0.6 0 0 3.14</pose>
+      <uri>model://@ROBOT_NAME@</uri>
+      <pose>0.0 0 0.63 0 0 3.14</pose>
     </include>
 
     <joint name="fixed right to ground" type="revolute">
       <parent>world</parent>
-      <child>iCub::r_foot</child>
+      <child>iCub::base_link::r_foot</child>
        <axis>
         <limit>
           <lower>0</lower>
@@ -19,7 +19,7 @@
     </joint>
     <joint name="fixed left to ground" type="revolute">
       <parent>world</parent>
-      <child>iCub::l_foot</child>
+      <child>iCub::base_link::l_foot</child>
        <axis>
         <limit>
           <lower>0</lower>

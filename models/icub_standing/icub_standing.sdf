@@ -1,0 +1,9 @@
+<?xml version='1.0'?>
+<sdf version='1.5'>
+  <model name="iCub_standing">
+    <include>
+      <uri>model://@ROBOT_NAME@</uri>
+      <pose>0.0 0 0.63 0 0 3.14</pose>
+    </include>
+  </model>
+</sdf>
