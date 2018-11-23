@@ -24,11 +24,11 @@
         <initialConfiguration> 0 0 0.0824</initialConfiguration>
       </plugin>
       <plugin name='larm_configuration_override' filename='libgazebo_yarp_configurationoverride.so'>
-        <yarpPluginConfigurationOverride plugin_name='controlboard_left_arm_no_arm'> </yarpPluginConfigurationOverride>
+        <yarpPluginConfigurationOverride plugin_name='controlboard_left_arm_no_hand'> </yarpPluginConfigurationOverride>
         <initialConfiguration>-0.6278 0.5231 0.0010 0.8727 0 0 0</initialConfiguration>
       </plugin>
       <plugin name='rarm_configuration_override' filename='libgazebo_yarp_configurationoverride.so'>
-        <yarpPluginConfigurationOverride plugin_name='controlboard_right_arm_no_arm'> </yarpPluginConfigurationOverride>
+        <yarpPluginConfigurationOverride plugin_name='controlboard_right_arm_no_hand'> </yarpPluginConfigurationOverride>
         <initialConfiguration>-0.6278 0.5231 0.0010 0.8727 0 0 0</initialConfiguration>
       </plugin>
       <plugin name='lleg_configuration_override' filename='libgazebo_yarp_configurationoverride.so'>
