@@ -2,6 +2,8 @@
 <sdf version="1.5">
   <model name="board">
     <pose>0 0 1.0 0.0 0.0 0.0</pose>
+
+    <!-- Base Link -->
     <link name="base_link">
       <inertial>
         <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
@@ -56,6 +58,8 @@
         </geometry>
       </visual>
     </link>
+
+    <!-- Border Links -->
     <link name="border_top_link">
       <pose>0.2375 0.0 0.025 0.0 0.0 0.0</pose>
       <inertial>
@@ -173,6 +177,127 @@
       </visual>
     </link>
 
+    <!-- Handle Dummy Links -->
+    <link name="side1_left_dummy_link">
+      <pose>-0.25 0.125 0.025 0.0 0.0 0.0</pose>
+      <inertial>
+        <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0000001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0000001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0000001</izz>
+        </inertia>
+      </inertial>
+      <collision name='side1_left_dummy_link_collision'>
+        <geometry>
+          <box>
+            <size>0.00001 0.00001 0.00001</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="side1_left_dummy_link_visual">
+        <geometry>
+          <box>
+            <size>0.00001 0.00001 0.00001</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="side1_right_dummy_link">
+      <pose>-0.25 -0.125 0.025 0.0 0.0 0.0</pose>
+      <inertial>
+        <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0000001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0000001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0000001</izz>
+        </inertia>
+      </inertial>
+      <collision name='side1_right_dummy_link_collision'>
+        <geometry>
+          <box>
+            <size>0.00001 0.00001 0.00001</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="side1_right_dummy_link_visual">
+        <geometry>
+          <box>
+            <size>0.00001 0.00001 0.00001</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="side2_left_dummy_link">
+      <pose>0.25 0.125 0.025 0.0 0.0 0.0</pose>
+      <inertial>
+        <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0000001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0000001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0000001</izz>
+        </inertia>
+      </inertial>
+      <collision name='side2_left_dummy_link_collision'>
+        <geometry>
+          <box>
+            <size>0.00001 0.00001 0.00001</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="side2_left_dummy_link_visual">
+        <geometry>
+          <box>
+            <size>0.00001 0.00001 0.00001</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="side2_right_dummy_link">
+      <pose>0.25 -0.125 0.025 0.0 0.0 0.0</pose>
+      <inertial>
+        <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0000001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0000001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0000001</izz>
+        </inertia>
+      </inertial>
+      <collision name='side2_right_dummy_link_collision'>
+        <geometry>
+          <box>
+            <size>0.00001 0.00001 0.00001</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="side2_right_dummy_link_visual">
+        <geometry>
+          <box>
+            <size>0.00001 0.00001 0.00001</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+
     <!-- Joints -->
     <joint name="joint1" type="fixed">
        <parent>base_link</parent>
@@ -206,5 +331,38 @@
             <xyz>1.0 0.0 0.0</xyz>
           </axis>
         </joint>
+
+        <joint name="joint5" type="fixed">
+           <parent>base_link</parent>
+           <child>side1_left_dummy_link</child>
+           <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+           <axis>
+             <xyz>1.0 0.0 0.0</xyz>
+           </axis>
+         </joint>
+         <joint name="joint6" type="fixed">
+            <parent>base_link</parent>
+            <child>side1_right_dummy_link</child>
+            <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+            <axis>
+              <xyz>1.0 0.0 0.0</xyz>
+            </axis>
+          </joint>
+          <joint name="joint7" type="fixed">
+             <parent>base_link</parent>
+             <child>side2_left_dummy_link</child>
+             <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+             <axis>
+               <xyz>1.0 0.0 0.0</xyz>
+             </axis>
+           </joint>
+           <joint name="joint8" type="fixed">
+              <parent>base_link</parent>
+              <child>side2_right_dummy_link</child>
+              <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+              <axis>
+                <xyz>1.0 0.0 0.0</xyz>
+              </axis>
+            </joint>
   </model>
 </sdf>
