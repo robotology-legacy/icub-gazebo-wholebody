@@ -43,9 +43,6 @@
           <uri>model://iCubGazeboV2_5</uri>
           <pose>0.0 0.0 0.39 0.0 0.0 3.14</pose>
       </include>
-      <plugin name='link_attacher' filename='libgazebo_yarp_linkattacher.so'>
-        <yarpConfigurationString>(name /iCub/linkattacher/rpc:i)</yarpConfigurationString>
-      </plugin>
     </model>
 
   </world>
