@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<sdf version="1.4">
+  <world name="default">
+
+    <!-- Light -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- Ground Plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <!-- Chair for sittin' on -->
+    <include>
+        <uri>model://chair</uri>
+    </include>
+
+    <!-- iCub in the sitting position -->
+    <include>
+    <uri>model://icub_standup</uri>
+    </include>
+  </world>
+</sdf>
