@@ -19,5 +19,18 @@ The option `--verbose` enables verbose output on the terminal running gazebo
 
 For **two_icubs_comanipulation** it is also necessary to avoid using the standard `gazeboYarpPluginsRobotName` for the two robots, otherwise the two models would share the name `icubSim` and the control boards of one of the two model fail.
 This can be done by editing [gazebo_icub_robotname.ini](https://github.com/robotology/icub-gazebo/blob/master/icub/conf/gazebo_icub_robotname.ini) file, and commenting out the following line:
+
  ```
- gazeboYarpPluginsRobotName icubSim
+gazeboYarpPluginsRobotName icubSim
+
+ ```
+ When the world is created the two robots are spawned along with the board on top of their hands. The board and the hands of the robots are not linked at this state, but the `board` model is created with the [linkattacher](https://github.com/robotology/gazebo-yarp-plugins/tree/master/plugins/linkattacher) gazebo-yarp-plugin which is be used to attach the robots hands and the board. The bash script `handlesHandsLinkAttacher.sh` inside the `board` model directory will achieve this. The usage is as following:
+
+```
+./handlesHandsLinkAttacher.sh attach -----> Attach the handle links of the board to the hand links of the two robot
+./handlesHandsLinkAttacher.sh detach -----> Detach the handle links of the board from the hand links of the two robot
+ ```
+
+ **NOTE:** If the bash script is throwing error there may be a possible naming issue of the icub models spawned in gazebo. The default names of the two iCub robots assumed for this bash script are `iCub1` and `iCub2`.
+
+
