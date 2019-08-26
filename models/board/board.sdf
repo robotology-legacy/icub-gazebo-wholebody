@@ -1,0 +1,374 @@
+<?xml version='1.0'?>
+<sdf version="1.5">
+  <model name="board">
+    <pose>0 0 1.0 0.0 0.0 0.0</pose>
+
+    <!-- Base Link -->
+    <link name="base_link">
+      <inertial>
+        <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+        <mass>2</mass>
+        <inertia>
+          <ixx>0.0416</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0416</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.083</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.025</size>
+          </box>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode>
+              <soft_erp>0.2</soft_erp>
+              <soft_cfm>0</soft_cfm>
+              <kp>18000000</kp>
+              <kd>100</kd>
+              <max_vel>100</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+              <fdir1>0 0 0</fdir1>
+              <slip1>0</slip1>
+              <slip2>0</slip2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0</restitution_coefficient>
+            <threshold>100000</threshold>
+          </bounce>
+        </surface>
+      </collision>
+      <visual name="base_link_visual">
+        <geometry>
+          <box>
+            <size>0.5 0.5 0.025</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+
+    <!-- Border Links -->
+    <link name="border_top_link">
+      <pose>0.2375 0.0 0.025 0.0 0.0 0.0</pose>
+      <inertial>
+        <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.000208</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.000001037</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.000208</izz>
+        </inertia>
+      </inertial>
+      <collision name='border_top_link_collision'>
+        <geometry>
+          <box>
+            <size>0.025 0.5 0.025</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="border_top_link_visual">
+        <geometry>
+          <box>
+            <size>0.025 0.5 0.025</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+    <link name="border_bottom_link">
+      <pose>-0.2375 0.0 0.025 0.0 0.0 0.0</pose>
+      <inertial>
+        <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.000208</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.000001037</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.000208</izz>
+        </inertia>
+      </inertial>
+      <collision name='border_bottom_link_collision'>
+        <geometry>
+          <box>
+            <size>0.025 0.5 0.025</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="border_bottom_link_visual">
+        <geometry>
+          <box>
+            <size>0.025 0.5 0.025</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+    <link name="border_left_link">
+      <pose>0.0 0.2375 0.025 0.0 0.0 0.0</pose>
+      <inertial>
+        <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.000001037</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.000208</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.000208</izz>
+        </inertia>
+      </inertial>
+      <collision name='border_left_link_collision'>
+        <geometry>
+          <box>
+            <size>0.5 0.025 0.025</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="border_left_link_visual">
+        <geometry>
+          <box>
+            <size>0.5 0.025 0.025</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+    <link name="border_right_link">
+      <pose>0.0 -0.2375 0.025 0.0 0.0 0.0</pose>
+      <inertial>
+        <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.000001037</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.000208</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.000208</izz>
+        </inertia>
+      </inertial>
+      <collision name='border_right_link_collision'>
+        <geometry>
+          <box>
+            <size>0.5 0.025 0.025</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="border_right_link_visual">
+        <geometry>
+          <box>
+            <size>0.5 0.025 0.025</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+
+    <!-- Handle Dummy Links -->
+    <link name="side1_left_dummy_link">
+      <pose>-0.25 0.125 0.025 0.0 0.0 0.0</pose>
+      <inertial>
+        <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0,00000166</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0,00000166</iyy>
+          <iyz>0.0</iyz>
+          <izz>0,00000166</izz>
+        </inertia>
+      </inertial>
+      <collision name='side1_left_dummy_link_collision'>
+        <geometry>
+          <box>
+            <size>0.01 0.01 0.01</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="side1_left_dummy_link_visual">
+        <geometry>
+          <box>
+            <size>0.01 0.01 0.01</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="side1_right_dummy_link">
+      <pose>-0.25 -0.125 0.025 0.0 0.0 0.0</pose>
+      <inertial>
+        <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0,00000166</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0,00000166</iyy>
+          <iyz>0.0</iyz>
+          <izz>0,00000166</izz>
+        </inertia>
+      </inertial>
+      <collision name='side1_right_dummy_link_collision'>
+        <geometry>
+          <box>
+            <size>0.01 0.01 0.01</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="side1_right_dummy_link_visual">
+        <geometry>
+          <box>
+            <size>0.01 0.01 0.01</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="side2_left_dummy_link">
+      <pose>0.25 0.125 0.025 0.0 0.0 0.0</pose>
+      <inertial>
+        <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0,00000166</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0,00000166</iyy>
+          <iyz>0.0</iyz>
+          <izz>0,00000166</izz>
+        </inertia>
+      </inertial>
+      <collision name='side2_left_dummy_link_collision'>
+        <geometry>
+          <box>
+            <size>0.01 0.01 0.01</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="side2_left_dummy_link_visual">
+        <geometry>
+          <box>
+            <size>0.01 0.01 0.01</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="side2_right_dummy_link">
+      <pose>0.25 -0.125 0.025 0.0 0.0 0.0</pose>
+      <inertial>
+        <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0,00000166</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0,00000166</iyy>
+          <iyz>0.0</iyz>
+          <izz>0,00000166</izz>
+        </inertia>
+      </inertial>
+      <collision name='side2_right_dummy_link_collision'>
+        <geometry>
+          <box>
+            <size>0.01 0.01 0.01</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="side2_right_dummy_link_visual">
+        <geometry>
+          <box>
+            <size>0.01 0.01 0.01</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+
+    <!-- Joints -->
+    <joint name="joint1" type="fixed">
+      <parent>base_link</parent>
+      <child>border_top_link</child>
+      <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+      <axis>
+        <xyz>1.0 0.0 0.0</xyz>
+      </axis>
+    </joint>
+    <joint name="joint2" type="fixed">
+      <parent>base_link</parent>
+      <child>border_bottom_link</child>
+      <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+      <axis>
+        <xyz>1.0 0.0 0.0</xyz>
+      </axis>
+    </joint>
+    <joint name="joint3" type="fixed">
+      <parent>base_link</parent>
+      <child>border_left_link</child>
+      <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+      <axis>
+        <xyz>1.0 0.0 0.0</xyz>
+      </axis>
+    </joint>
+    <joint name="joint4" type="fixed">
+      <parent>base_link</parent>
+      <child>border_right_link</child>
+      <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+      <axis>
+        <xyz>1.0 0.0 0.0</xyz>
+      </axis>
+    </joint>
+
+    <joint name="joint5" type="fixed">
+      <parent>base_link</parent>
+      <child>side1_left_dummy_link</child>
+      <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+      <axis>
+        <xyz>1.0 0.0 0.0</xyz>
+      </axis>
+    </joint>
+    <joint name="joint6" type="fixed">
+      <parent>base_link</parent>
+      <child>side1_right_dummy_link</child>
+      <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+      <axis>
+        <xyz>1.0 0.0 0.0</xyz>
+      </axis>
+    </joint>
+    <joint name="joint7" type="fixed">
+      <parent>base_link</parent>
+      <child>side2_left_dummy_link</child>
+      <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+      <axis>
+        <xyz>1.0 0.0 0.0</xyz>
+      </axis>
+    </joint>
+    <joint name="joint8" type="fixed">
+      <parent>base_link</parent>
+      <child>side2_right_dummy_link</child>
+      <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+      <axis>
+        <xyz>1.0 0.0 0.0</xyz>
+      </axis>
+    </joint>
+
+    <!-- Linkattacher Plugin -->
+    <plugin name='link_attacher' filename='libgazebo_yarp_linkattacher.so'>
+      <yarpConfigurationFile>model://board/conf/linkattacher.ini</yarpConfigurationFile>
+    </plugin>
+
+  </model>
+</sdf>

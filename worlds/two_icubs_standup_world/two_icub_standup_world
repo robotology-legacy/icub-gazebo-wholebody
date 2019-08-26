@@ -40,8 +40,18 @@
         <initialConfiguration>1.5908 0.2141 0 -1.8176  -0.2142 0.0</initialConfiguration>
       </plugin>
       <include>
-          <uri>model://iCubGazeboV2_5</uri>
-          <pose>0.0 0.0 0.39 0.0 0.0 3.14</pose>
+          <uri>model://icub</uri>
+      </include>
+      <plugin name='link_attacher' filename='libgazebo_yarp_linkattacher.so'>
+        <yarpConfigurationString>(name /iCub/linkattacher/rpc:i)</yarpConfigurationString>
+      </plugin>
+    </model>
+
+    <!-- iCub standing-->
+    <model name="iCub_0">
+      <include>
+          <uri>model://icub</uri>
+          <pose>0.6 0.0 0.6 0 0 0</pose>
       </include>
     </model>
 
